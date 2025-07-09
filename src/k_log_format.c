@@ -63,7 +63,7 @@ size_t k_log_format_create_string(const char* module_name, k_log_format_level_t 
 								   K_LOG_FORMAT_LEVEL_WARN == level	 ? K_LOG_FORMAT_COLOR_TEXT_WARN :
 																	   K_LOG_FORMAT_COLOR_TEXT_ERROR;  // Default to error if level is not recognized
 
-		snprintf(formatted_message, K_LOG_FORMAT_TMP_BUFFER_SIZE, "%s%lu.%03lu [%s]%s[%s]", K_LOG_FORMAT_COLOR_DEFAULT, timestamp_seconds,
+		snprintf(formatted_message, K_LOG_FORMAT_TMP_BUFFER_SIZE, "%s%zu.%03zu [%s]%s[%s]", K_LOG_FORMAT_COLOR_DEFAULT, timestamp_seconds,
 				 timestamp_milliseconds, level_prefix, text_color, module_name);
 		char*	formatted_message_ptr = formatted_message + strlen(formatted_message);
 		va_list args;
